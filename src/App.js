@@ -4,6 +4,21 @@ import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
 
+// React Router Dom Needed Imports
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+// Import needed for React, Bootstrap
+// import { ReactDOM } from 'react';
+
+
+
+
 function App() {
   return (
     <div className="App">
@@ -19,15 +34,17 @@ function App() {
       {/* Bootstrap Navbar */}
       <nav>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="#home">Mouse And Key</Navbar.Brand>
+          <Navbar.Brand href="home">Mouse And Key</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#features">Teams</Nav.Link>
-              <Nav.Link href="#pricing">Clients</Nav.Link>
-              <Nav.Link href="#pricing">Contact</Nav.Link>
+              <Nav.Link href="teams">Teams</Nav.Link>
+              <Nav.Link href="web-design">Web Design</Nav.Link>
+              <Nav.Link href="app-development">App Development</Nav.Link>
+              <Nav.Link href="contact">Contact</Nav.Link>
 
-              
+
+        
               {/* NavbarDropdownComponent */}
               {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -38,10 +55,10 @@ function App() {
               </NavDropdown> */}
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">More deets</Nav.Link>
+              {/* <Nav.Link href="#deets">More deets</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
                 Dank memes
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -81,22 +98,45 @@ function App() {
 
 
         </div>
+        <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home </Link>
+          </li>
+          <li>
+            <Link to="/about">Teams</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Clients</Link>
+          </li>
+        </ul>
 
+        <hr />
+
+        {/*
+          A <Switch> looks through all its children <Route>
+          elements and renders the first one whose path
+          matches the current URL. Use a <Switch> any time
+          you have multiple routes, but you want only one
+          of them to render at a time
+        */}
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/teams">
+            <About />
+          </Route>
+          <Route path="/clients">
+            <Dashboard />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
         <div>
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -115,6 +155,30 @@ function App() {
 
 
 
+  );
+}
+
+function Home() {
+  return (
+    <div>
+      <h2>Home, I am the new page :D</h2>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Dashboard() {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+    </div>
   );
 }
 
