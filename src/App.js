@@ -3,6 +3,10 @@ import './App.css';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 // React Router Dom Needed Imports
 import React from "react";
@@ -44,7 +48,7 @@ function App() {
               <Nav.Link href="contact">Contact</Nav.Link>
 
 
-        
+
               {/* NavbarDropdownComponent */}
               {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -64,6 +68,60 @@ function App() {
         </Navbar>
       </nav>
 
+      <header>
+        <Jumbotron>
+          <h1>Are you,</h1>
+          <h3>In need of a website?</h3>
+          <h3>Not sure how to imporove a website you currently have?</h3>
+          <h3>Looking for a development team to maintain your website?</h3>
+
+          <p>
+            <Button href="contact" variant="primary">Get in touch</Button>
+          </p>
+
+        </Jumbotron>
+      </header>
+
+      {/* Card for Website Design */}
+      <div>
+        <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Body>
+            <Card.Title>Website Design</Card.Title>
+            <Card.Text>
+                  <ul>
+                  <li>Personalized Plan</li>
+                  <li>Create new Website</li>
+                  <li>Update existing Website</li>
+                  <li>Tailored team of developers</li>
+                  <li>And More...</li>
+                  </ul>
+            </Card.Text>
+            <Button href="web-design"variant="primary">Web Design</Button>
+          </Card.Body>
+        </Card>
+      </div>
+
+
+            {/* Card for App Development */}
+            <div>
+        <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Body>
+            <Card.Title>Application Development</Card.Title>
+            <Card.Text>
+                  <ul>
+                  <li>Personalized Plan</li>
+                  <li>Create new Application</li>
+                  <li>Update existing Application</li>
+                  <li>Tailored team of developers</li>
+                  <li>And More...</li>
+                  </ul>
+            </Card.Text>
+            <Button href="app-development" variant="primary">App Development</Button>
+          </Card.Body>
+        </Card>
+      </div>
 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -79,6 +137,8 @@ function App() {
           Learn React
         </a>
       </header>
+
+
 
       <body>
 
@@ -99,41 +159,41 @@ function App() {
 
         </div>
         <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home </Link>
-          </li>
-          <li>
-            <Link to="/about">Teams</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Clients</Link>
-          </li>
-        </ul>
+          <div>
+            <ul>
+              <li>
+                <Link to="/">Home </Link>
+              </li>
+              <li>
+                <Link to="/about">Teams</Link>
+              </li>
+              <li>
+                <Link to="/dashboard">Clients</Link>
+              </li>
+            </ul>
 
-        <hr />
+            <hr />
 
-        {/*
+            {/*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
           matches the current URL. Use a <Switch> any time
           you have multiple routes, but you want only one
           of them to render at a time
         */}
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/teams">
-            <About />
-          </Route>
-          <Route path="/clients">
-            <Dashboard />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/teams">
+                <About />
+              </Route>
+              <Route path="/clients">
+                <Dashboard />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
         <div>
 
         </div>
@@ -142,7 +202,7 @@ function App() {
 
 
 
-
+        {/* Bootstrap Needed Code */}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
